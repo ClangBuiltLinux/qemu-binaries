@@ -22,7 +22,7 @@ set -x
 "${BINARY}" run \
     --rm \
     --init \
-    --volume=${BASE}:${BASE} \
-    --workdir=${BASE} \
+    --volume="${BASE}:${BASE}" \
+    --workdir="${BASE}" \
     qemu-binaries-builder \
     "${BASE}"/build-qemu.sh

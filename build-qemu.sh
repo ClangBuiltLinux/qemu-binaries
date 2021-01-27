@@ -4,7 +4,7 @@ BASE=$(dirname "$(readlink -f "${0}")")
 
 set -x
 
-QEMU_TARGETS=( s390x-softmmu )
+QEMU_TARGETS=(s390x-softmmu)
 
 function upd_qemu() {
     QEMU_SRC=${BASE}/src
