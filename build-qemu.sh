@@ -4,7 +4,7 @@ BASE=$(dirname "$(readlink -f "${0}")")
 
 set -x
 
-QEMU_TARGETS=(riscv64-softmmu s390x-softmmu)
+QEMU_TARGETS=(s390x-softmmu)
 
 function upd_qemu() {
     QEMU_SRC=${BASE}/src
@@ -46,7 +46,6 @@ function gather_files() {
 
         # Move any necessary firmware
         case ${QEMU_TARGET} in
-            riscv64-softmmu) FIRMWARE_FILES=(opensbi-riscv64-generic-fw_dynamic.bin opensbi-riscv64-generic-fw_dynamic.elf) ;;
             s390x-softmmu) FIRMWARE_FILES=(s390-ccw.img) ;;
         esac
         if [[ -n ${FIRMWARE_FILES[*]} ]]; then
